@@ -1,0 +1,17 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>One checkbox at a time</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-card class="ion-card">
+		<ion-item *ngFor="let category of categories; let i = index">
+			<ion-label>{{category.name}}</ion-label>
+			<ion-checkbox 
+        [disabled]="categories[i].value" 
+        (click)="selection(category.name);">
+			</ion-checkbox>
+		</ion-item>
+	</ion-card>
+</ion-content>
